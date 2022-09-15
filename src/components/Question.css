@@ -1,0 +1,195 @@
+#question {
+    background-color: #443b4e;
+    border-radius: 1rem;
+    padding: 2rem;
+  }
+  
+  #question p {
+    margin-bottom: 3rem;
+  }
+  
+  #question h2 {
+    margin-bottom: 2rem;
+  }
+  
+  #question button {
+    border: 2px solid #fff;
+    margin: 1rem;
+  }
+
+  
+.btnGeral{
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: .8rem 1.5rem;
+  background: linear-gradient(90deg,
+    rgb(64, 47, 83) 0%,
+    rgb(161, 152, 165) 100%
+  );
+  border-radius: 3rem;
+  border: none;
+}
+
+.btnGeral:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(161, 152, 165) 0%,
+    rgba(64, 47, 83) 100%
+  );
+}
+
+
+  .cronometro{
+    width: 45px;
+    position: absolute;
+    margin-top: -1.2%;
+  }
+  
+  .divCronometro{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 50px;
+  }
+  
+  .timer{
+    position:absolute;
+    align-items: center;
+    justify-content: center;
+    margin-top: -0.2%;
+    margin-left: 0.5%;
+    font-size: 10px;
+  }
+
+  .timerColorYellow{
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.5%;
+    margin-left: 2%;
+    font-size: 10px;
+    color: yellow
+  }
+
+  .timerColorRed{
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.5%;
+    margin-left: 2%;
+    font-size: 10px;
+    color: red;
+  }
+
+
+  @media (min-width: 375px) and (max-width: 425px){
+
+    #question {
+        max-width: 80%;
+      }
+
+      #question h2 {
+        margin-bottom: 2rem;
+        margin-top: 7%;
+      }
+
+      .cronometro{
+        width: 45px;
+        position: absolute;
+        margin-top: -3%;
+      }
+
+      .divCronometro{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 50px;
+        
+      }
+      
+      .timer{
+        position:absolute;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2.5%;
+        margin-left: 2.5%;
+        font-size: 10px;
+      }
+
+      .timerColorYellow{
+        position: fixed;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2.5%;
+        margin-left: 2%;
+        font-size: 10px;
+        color: yellow
+      }
+
+      .timerColorRed{
+        position: fixed;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2.5%;
+        margin-left: 2%;
+        font-size: 10px;
+        color: red;
+      }
+
+  }
+
+
+  @media (min-width: 520px) and (max-width: 768px){
+
+    #question {
+        max-width: 80%;
+      }
+
+      #question h2 {
+        margin-bottom: 2rem;
+        margin-top: 7%;
+      }
+
+      .cronometro{
+        width: 45px;
+        position: absolute;
+        margin-top: -3%;
+      }
+
+      .divCronometro{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 50px;
+      }
+      
+      .timer{
+        position:absolute;
+        align-items: center;
+        justify-content: center;
+        margin-left: 1.4%;
+        font-size: 10px;
+      }
+
+      .timerColorYellow{
+        position: fixed;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2.5%;
+        margin-left: 2%;
+        font-size: 10px;
+        color: yellow
+      }
+
+      .timerColorRed{
+        position: fixed;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2.5%;
+        margin-left: 2%;
+        font-size: 10px;
+        color: red;
+      }
+
+  }
