@@ -7,9 +7,9 @@
 
 
 <div align="center">
-  <img src="https://i.ibb.co/wsqcHMx/tela1.png" width='300px'/>
-    <img src="https://i.ibb.co/PtxWcqf/tela2.png" width='300px'/>
-      <img src="https://i.ibb.co/4tWKQR4/tela3.png" width='300px'/>
+  <img src="https://i.ibb.co/wsqcHMx/tela1.png" width='200px'/>
+    <img src="https://i.ibb.co/PtxWcqf/tela2.png" width='200px'/>
+      <img src="https://i.ibb.co/4tWKQR4/tela3.png" width='200px'/>
 </div>
 
  <br> 
