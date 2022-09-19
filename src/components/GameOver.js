@@ -1,5 +1,5 @@
 import React from 'react'
-import firebase from '../firebaseConnection'
+import firebase from '../firebaseConnection';
 import { useContext } from 'react'
 import { QuizContext } from '../context/quiz'
 
@@ -16,6 +16,16 @@ const GameOver = () => {
 
     const [quizState, dispatch] = useContext(QuizContext)
 
+    // convertendo os numero e subtraindo para saber o tempo
+    let convertMinutos = parseInt(quizState.newMinutos) - quizState.newMinutos
+
+    let convertSegundos = parseInt(59 - quizState.newSegundos)
+
+    // convertendo os numeros em string
+    // let timerDeQuiz = convertMinutos.toString() + ':' + convertSegundos.toString()
+
+    console.log(convertMinutos, convertSegundos)
+
 
     cadastrarUser();
 
@@ -27,6 +37,8 @@ const GameOver = () => {
                 nome: quizState.nome,
                 categoria: quizState.categoria,
                 pontuacao: quizState.score,
+                minutos: convertMinutos,
+                segundos: convertSegundos
             })
 
             .then(() => {

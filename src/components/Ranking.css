@@ -1,0 +1,19 @@
+.containerRank .rank h1{
+    color: brown;
+}
+
+.containerRank img{
+    width: 60px;
+    margin-top: 40%;
+}
+
+
+
+.containerRank .divCat button{
+    background-color: blueviolet;
+    width: 200px;
+    margin-top: 10%;
+    font-size: 20px;
+    font-family: monospace;
+    padding: 3%;
+}

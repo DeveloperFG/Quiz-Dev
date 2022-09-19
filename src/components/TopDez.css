@@ -1,0 +1,61 @@
+.containerTopDez .topDez {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+    width: 150%;
+   
+}
+
+.containerTopDez .topDez h3{
+   color: rgb(188, 13, 211);
+   margin-bottom: 3%;
+   font-size: 1rem;
+   margin-left: -15%;
+   
+}
+
+.containerTopDez h2{
+    margin-bottom: 10%;
+    font-family: monospace;
+    background-color: blueviolet;
+    
+ }
+
+.containerTopDez .topDez p{
+    display: flex;
+    width: 45%;
+    margin-top: 1%;
+    margin-left: 2%;
+    font-family: monospace;
+    font-size: 14px;
+    
+ }
+
+ .containerTopDez .topDez .pontos{ 
+    margin-top: 1%;
+    margin-left: 1%;
+    width: 20%;
+    font-family: monospace;
+    font-size: 14px;
+   
+ }
+
+ .containerTopDez .topDez .minutos{ 
+    margin-top: 1%;
+    margin-left: 1%;
+    width: 10%;
+    font-family: monospace;
+    font-size: 14px;
+   
+   
+ }
+
+ .containerTopDez .topDez .segundos{ 
+    margin-top: 1%;
+    margin-left: 3%;
+    width: 10%;
+    font-family: monospace;
+    font-size: 14px;
+    
+ }

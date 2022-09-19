@@ -6,10 +6,14 @@ import questions from "../data/questions_complete";
 const nome = window.prompt('digite seu nome')
 
 var categoria;
+var newMinutos;
+var newSegundos;
 
-const STAGES = ["Start", "Category", "Playing", "End", "Ranking"];
+const STAGES = ["Start", "Category", "Playing", "End", "Ranking", "TopDez", "Home"];
 
 const initialState = {
+    newMinutos,
+    newSegundos,
     categoria,
     nome,
     gameStage: STAGES[0],
@@ -143,7 +147,31 @@ const quizReducer = (state, action) => {
                 optionToHide,
                 help: true,
             };
+
         }
+
+        case "Ranking":
+            return {
+                ...state,
+                gameStage: STAGES[4],
+            };
+
+        case "TopDez":
+
+            return {
+                ...state,
+                categoria: action.payload,
+                gameStage: STAGES[5],
+
+
+            };
+
+        case "HOME":
+            return {
+                ...state,
+                gameStage: STAGES[0],
+            };
+
 
         default:
             return state;

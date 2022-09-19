@@ -44,7 +44,6 @@ const Question = () => {
     const timerMinutes = minutes < 10 ? `0${minutes}` : minutes;
     const timerSeconds = seconds < 10 ? `0${seconds}` : seconds;
 
-
     function Gameover() {
         if (seconds === 0 && minutes == 0) {
             dispatch({
@@ -63,6 +62,10 @@ const Question = () => {
             payload: { answer: currentQuestion.answer, option },
         });
     };
+
+
+    quizState.newMinutos = timerMinutes;
+    quizState.newSegundos = timerSeconds;
 
 
     return (

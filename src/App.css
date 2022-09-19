@@ -17,12 +17,11 @@
    margin-bottom: 3%;
    font-size: .8rem;
    cursor: pointer;
-   padding: .4rem 1rem;
+   padding: .2rem 1rem;
    background: linear-gradient(90deg,
      rgb(114, 6, 238) 0%,
      rgb(33, 0, 48) 100%
    );
-   border-radius: 3rem;
    border: none;
  }
  
@@ -34,3 +33,21 @@
    );
  }
  
+
+ .divRank{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-top: 2%;
+  flex-direction: row;
+ }
+
+ .divBtnRank{
+   background-color: black;
+   margin-right: -20%;
+ }
+
+ .divRank img{
+   width: 80px;
+
+ }
