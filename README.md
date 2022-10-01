@@ -39,7 +39,7 @@
 <br> 
 
 # 🔜 Implementação futura
-* Criação de rank.
+* Criação de rank ✅
 * Implementação de níveis de dificuldades.
 
 <br> 
