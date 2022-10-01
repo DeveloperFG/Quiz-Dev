@@ -35,6 +35,7 @@
 * Gera perguntas de forma aleatória.
 * Gera um resultado conforme o desempenho do usuário.
 * Armazena em um banco de dados, como foi o desempenho do usuário.
+* Ranking de classifição por categoria de cada linguagens, filtrando por pontos, minutos e segundos.
 
 <br> 
 
