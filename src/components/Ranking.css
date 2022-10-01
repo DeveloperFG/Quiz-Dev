@@ -17,3 +17,19 @@
     font-family: monospace;
     padding: 3%;
 }
+
+.imgVoltar{
+    width: 60px;
+    margin-top: 40%;
+}
+
+.trofeu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trofeu img{
+    align-items: center;
+    width: 50px;
+}

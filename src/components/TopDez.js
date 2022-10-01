@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import firebase from '../firebaseConnection';
+
 import { useContext } from "react";
 import { QuizContext } from "../context/quiz";
 
+import Load from '../Load/load';
+
+import voltar from '../img/voltar.png'
+
 import './TopDez.css'
+
+
 
 const TopDez = () => {
 
 
     const [quizState, dispatch] = useContext(QuizContext);
+
+    const [Loading, setLoading] = useState(false)
 
     const [usuarios, setUsuarios] = useState([]);
 
@@ -17,6 +26,12 @@ const TopDez = () => {
 
     // Identificando a categoria para mostrar os dados
     let newCategoria = quizState.categoria
+
+
+    // fazendo o filtro para categoria desejada
+    let listRank = usuarios.filter(item => item.categoria === newCategoria)
+
+
 
     useEffect(() => {
 
@@ -37,7 +52,26 @@ const TopDez = () => {
                         })
 
                     })
-                    setUsuarios(listaUser)
+
+                    let sortPoints = listaUser.sort((a, b) => {
+                        return a?.pontos >= b?.pontos ? -1 : 1;
+                    });
+
+                    let sortUsers = sortPoints.sort((a, b) => {
+                        if (a?.pontos == b?.pontos) {
+                            return a?.minuto <= b?.minuto ? -1 : 1;
+                        }
+                    })
+
+                    let sortFinal = sortUsers.sort((a, b) => {
+                        if (a.pontos == b.pontos && a?.minuto == b?.minuto) {
+                            return a?.segundo <= b?.segundo ? -1 : 1;
+                        }
+
+                    })
+
+
+                    setUsuarios(sortFinal)
 
                 })
                 .catch(() => {
@@ -52,57 +86,42 @@ const TopDez = () => {
     }, [])
 
 
-    // fazendo o filtro para categoria desejada
-    let listRank = usuarios.filter(item => item.categoria === newCategoria)
-
-    // funcão que faz a classificação
-    let newRank = listRank.sort(function (a, b) {
-        if (a.pontos > b.pontos) {
-            return -1;
-        }
-        if (a.pontos < b.pontos) {
-            return 1;
-        }
-        if (a.pontos === b.pontos) {
-            if (a.minuto < b.minuto) {
-                return -1;
-            }
-
-            if (a.minuto > b.minuto) {
-                return 1;
-            }
-            if (a.minuto === b.minuto) {
-                if (a.segundos < b.segundos) {
-                    return -1;
-                }
-                if (a.segundos > b.segundos) {
-                    return 1;
-                }
-                if (a.segundos === b.segundos) {
-                    return 0;
-                }
-            }
-
-        }
-
-    })
 
 
 
     return (
         <div className='containerTopDez'>
             <h2>RANKING: {quizState.categoria}</h2>
-            {newRank.map((item, index) => {
+            {usuarios.length === 0 && (
+                <Load />
+            )}
+            {listRank.map((item, index) => {
                 return (
                     <div key={index} className='topDez'>
-                        <h3>{cont++}-</h3>
-                        <p>{item.nome}</p>
-                        <small className='pontos'>{item.pontos} pts</small>
-                        <small className='minutos'>{item.minuto}m</small>
-                        <small className='segundos'>{item.segundo}s</small>
+                        <div className='filtro1'>
+                            <h3>{cont++}-</h3>
+                            <p className={cont < 12 ? 'tops' : cont < 22 ? 'medio' : 'abaixo'}>{item.nome}</p>
+                        </div>
+
+                        <div className='filtro2'>
+                            <small className='pontos'>{item.pontos} pts</small>
+                            <small className='minutos'>{item.minuto}m</small>
+                            <small className='segundos'>{item.segundo}s</small>
+                        </div>
+
+
                     </div>
                 )
             })}
+
+            <div>
+                {usuarios != '' &&
+                    <div>
+                        <img className="imgReturn" onClick={() => dispatch({ type: "Ranking" })} src={voltar} />
+                    </div>
+                }
+            </div>
+
         </div>
     )
 }

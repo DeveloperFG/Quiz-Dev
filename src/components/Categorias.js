@@ -2,13 +2,13 @@ import { useContext } from "react";
 
 import { QuizContext } from "../context/quiz";
 
-import Quiz from "../img/pessoa.svg";
-import Pergunta from "../img/pergunta.png";
+import voltar from '../img/voltar.png'
 
 
-import "./PickCategory.css";
 
-const PickCategory = () => {
+import "./Categorias.css";
+
+const Categorias = () => {
     const [quizState, dispatch] = useContext(QuizContext);
 
 
@@ -52,8 +52,14 @@ const PickCategory = () => {
                 </div>
 
             </div>
+
+            {quizState.gameStage === 'Category' &&
+                <div>
+                    <img className="imgVoltar" onClick={() => dispatch({ type: "Niveis" })} src={voltar} />
+                </div>
+            }
         </div>
     );
 };
 
-export default PickCategory;
+export default Categorias;

@@ -3,21 +3,22 @@ import firebase from '../firebaseConnection';
 import { useContext } from 'react'
 import { QuizContext } from '../context/quiz'
 
-import questions from "../data/questions_complete";
+import questions from "../data/questoes";
 
-import '../components/GameOver.css'
+import '../components/FimDoJogo.css'
 
-import Fim from '../img/fim.png'
 import Alto from '../img/alto.png'
 
 
-const GameOver = () => {
+const FimDoJogo = () => {
 
 
     const [quizState, dispatch] = useContext(QuizContext)
 
     // convertendo os numero e subtraindo para saber o tempo
-    let convertMinutos = parseInt(quizState.newMinutos) - quizState.newMinutos
+    let timeInicial = 7
+
+    let convertMinutos = parseInt((timeInicial - quizState.newMinutos) - 1)
 
     let convertSegundos = parseInt(59 - quizState.newSegundos)
 
@@ -58,8 +59,11 @@ const GameOver = () => {
             <p>Voce acertou {quizState.score} de {quizState.questions.length} perguntas</p>
             <div>
                 <>
-                    {quizState.score == 5 || quizState.score == 6 ? `Muito bem ${quizState.nome} você acertou mais de 70%! continue assim!` : quizState.score == 7 ? `Parabéns ${quizState.nome} você acertou 100% das questões! Mas não se deixe levar, continue estudando e seja humilde sempre.` : 'Você acertou menos de 70%, mas não desanime! continue firme na sua jornada! '}
+                    {quizState.score == 7 ? ` Você estar na média ${quizState.nome} continue os estudos!` : quizState.score == 8 || quizState.score == 9 ? `Muito bem ${quizState.nome} você acertou mais de 70%! continue assim!` : quizState.score == 10 ? `Parabéns ${quizState.nome} você acertou 100% das questões! Mas não se deixe levar, continue estudando e seja humilde sempre.` : 'Você acertou menos de 70%, mas não desanime! continue firme na sua jornada! '}
                 </>
+            </div>
+            <div className='divSeuTime'>
+                <h3 className='seuTime'>Seu tempo foi - {convertMinutos}m : {convertSegundos}s </h3>
             </div>
             <div className='final'>
                 <img className='imgFinal' src={Alto} alt="Fim do Quiz" />
@@ -70,4 +74,4 @@ const GameOver = () => {
     )
 }
 
-export default GameOver;
+export default FimDoJogo;

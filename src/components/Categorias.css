@@ -72,4 +72,16 @@
       .iimm{
         margin-top: -60%;
       }
+
+      .imgVoltar{
+        width: 60px;
+        margin-top: 40%;
+    }
+    
+    .geral{
+      display: block;
+      flex-direction: column;
+      
+    }
+
   }

@@ -68,3 +68,10 @@
     );
   }
   
+.divSeuTime{
+    margin-top: 8%;
+}
+
+.seuTime{
+    color: chartreuse;
+}

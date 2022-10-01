@@ -1,15 +1,31 @@
 import { createContext, useReducer } from "react";
-import questions from "../data/questions_complete";
+import questions from "../data/questoes";
 
 
 
-const nome = window.prompt('digite seu nome')
+let nome = window.prompt('digite seu nome')
+
+
+
+if (nome == '' || nome == null || nome.length < 4) {
+    do {
+        nome = window.prompt('digite seu nome')
+    } while (!nome)
+
+    if (nome.length < 4) {
+        do {
+            nome = window.prompt('digite um nome válido')
+        } while (nome.length < 4)
+    }
+}
+
+
 
 var categoria;
 var newMinutos;
 var newSegundos;
 
-const STAGES = ["Start", "Category", "Playing", "End", "Ranking", "TopDez", "Home"];
+const STAGES = ["Start", "Category", "Playing", "End", "Ranking", "TopDez", "Home", "Niveis",];
 
 const initialState = {
     newMinutos,
@@ -170,6 +186,12 @@ const quizReducer = (state, action) => {
             return {
                 ...state,
                 gameStage: STAGES[0],
+            };
+
+        case "Niveis":
+            return {
+                ...state,
+                gameStage: STAGES[7],
             };
 
 
